@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'klone.Run'
+    }
+}
+mainClassName = 'klone.Run'
+
+dependencies {
+    compile group: 'info.picocli', name: 'picocli', version: '3.9.2'
+    compile group: 'org.apache.kafka', name: 'kafka-clients', version: '2.1.0'
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.26'
+    compile group: 'io.prometheus', name: 'simpleclient', version: '0.6.0'
+    compile group: 'io.prometheus', name: 'simpleclient_httpserver', version: '0.6.0'
+    compile group: 'io.prometheus', name: 'simpleclient_hotspot', version: '0.6.0'
+
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.4.2'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.4.2'
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.23.4'
+    testCompile group: 'org.mockito', name: 'mockito-junit-jupiter', version: '2.28.2'
+    testCompile group: 'org.testcontainers', name: 'kafka', version: '1.11.3'
+}
+
+repositories {
+    jcenter() 
+}
